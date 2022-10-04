@@ -7,7 +7,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 HEADERS = $(shell ls *.hpp)
 
 SRC = $(shell ls *.cpp)
-OBJ = $(patsubst %.cpp,%.o,$(SRC))
+OBJ = $(SRC:.cpp=.o)
 
 all : $(NAME)
 

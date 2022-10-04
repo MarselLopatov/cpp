@@ -4,8 +4,8 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = megaphone.cpp
-OBJ = megaphone.o
+SRC = $(shell ls *.cpp)
+OBJ = $(SRC:.cpp=.o)
 
 all : $(NAME)
 
