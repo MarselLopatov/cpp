@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 21:16:02 by cdoria            #+#    #+#             */
-/*   Updated: 2022/08/20 18:48:12 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/10/04 17:45:10 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Contact::~Contact()
 
 void Contact::new_contact()
 {
+	std::string test;
 	std::cout << "Enter firts name: ";
 	std::cin >> first_name;
 	std::cout << "Enter last name: ";
@@ -51,4 +52,9 @@ std::string	Contact::getNickname()
 std::string	Contact::getPhone()
 {
 	return (phone_number);
+}
+
+std::string	Contact::getSecret()
+{
+	return (darkest_secret);
 }

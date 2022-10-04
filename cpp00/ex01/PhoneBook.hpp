@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 20:50:33 by cdoria            #+#    #+#             */
-/*   Updated: 2022/08/20 18:44:12 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/10/04 17:35:56 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 class PhoneBook
 {
 private:
-	Contact	contacts[8];
-	int		index;
-	int		amount;
+	Contact		contacts[8];
+	static int	index;
+	static int	amount;
 public:
 	// PhoneBook();
 	// ~PhoneBook();

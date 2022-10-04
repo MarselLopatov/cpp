@@ -6,11 +6,14 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 21:15:03 by cdoria            #+#    #+#             */
-/*   Updated: 2022/08/20 19:16:10 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/10/04 17:37:55 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+int PhoneBook::index = 0;
+int PhoneBook::amount = 0;
 
 void	PhoneBook::add()
 {
@@ -61,14 +64,20 @@ void	PhoneBook::search()
 	{
 		std::cout << "Enter index to display info: ";
 		std::cin >> i;
-		if (i < 0 || i > amount)
+		if (std::cin.fail() || i <= 0 || i > amount)
+		{
+			std::cin.clear();
+			std::cin.ignore(INT32_MAX, '\n');
 			std::cout << "wrong input\n";
+		}
 		else
 			break ;
 	}
 	std::cout << contacts[i - 1].getFirstName() << std::endl;
 	std::cout << contacts[i - 1].getLastName() << std::endl;
 	std::cout << contacts[i - 1].getNickname() << std::endl;
+	std::cout << contacts[i - 1].getPhone() << std::endl;
+	std::cout << contacts[i - 1].getSecret() << std::endl;
 	std::cout << std::endl;
 }
 

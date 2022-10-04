@@ -2,7 +2,7 @@ NAME = phonebook
 
 CC = c++ -g3
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
 
 HEADERS = $(shell ls *.hpp)
 

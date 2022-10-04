@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 20:55:33 by cdoria            #+#    #+#             */
-/*   Updated: 2022/08/20 18:47:26 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/10/04 17:47:19 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 class Contact
 {
-private:	
+private:
 	std::string	first_name;
 	std::string	last_name;
 	std::string	nickname;
@@ -34,6 +34,7 @@ public:
 	std::string	getLastName();
 	std::string	getNickname();
 	std::string	getPhone();
+	std::string	getSecret();
 };
 
 #endif
