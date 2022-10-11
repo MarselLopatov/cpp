@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 16:22:33 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/05 18:17:22 by cdoria           ###   ########.fr       */
+/*   Created: 2022/09/28 17:18:50 by cdoria            #+#    #+#             */
+/*   Updated: 2022/10/11 11:39:42 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
+
 #include "Weapon.hpp"
 
-void    Weapon::setType( std::string type )
+class HumanA
 {
-    this->type = type;
-}
+private:
+    std::string     name;
+    const Weapon    &weapon;
+public:
+    HumanA( std::string name, const Weapon &weapon );
+    ~HumanA();
+    void    attack();
+};
 
-std::string Weapon::getType() const
-{
-    return (type);    
-}
-
-Weapon::Weapon( std::string type )
-{
-    this->type = type;
-}
-
-Weapon::~Weapon()
-{}
+#endif

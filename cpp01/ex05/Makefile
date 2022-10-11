@@ -1,4 +1,4 @@
-NAME		=	weapon
+NAME		=	replace
 
 SRC 		=	$(shell ls *cpp)
 OBJ			=	$(SRC:.cpp=.o)
@@ -9,8 +9,6 @@ OBJS 		= 	$(addprefix $(OBJS_DIR), $(OBJ))
 
 CC			=	g++ -std=c++98
 CFLAGS		=	-Wall -Wextra -Werror
-
-
 
 all 				: $(NAME)
 
