@@ -7,7 +7,7 @@ OBJS 		= 	$(addprefix $(OBJS_DIR), $(OBJ))
 
 
 
-CC			=	g++ -std=c++98
+CC			=	c++ -std=c++98
 CFLAGS		=	-Wall -Wextra -Werror
 
 all 				: $(NAME)
@@ -17,11 +17,12 @@ $(NAME) 			: $(OBJS)
 
 $(OBJS_DIR)%.o		:	%.cpp
 					mkdir -p $(OBJS_DIR)
-					g++ $(CFLAGS) -c $< -o $@
+					c++ $(CFLAGS) -c $< -o $@
 
 clean				:
 					rm -rf $(OBJS_DIR)
 
 fclean				:	clean
 					rm -rf $(NAME)
+
 re : clean all

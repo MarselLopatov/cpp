@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:40:50 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/11 16:44:10 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/10/11 17:00:18 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void    Harl::other( void )
 
 void    Harl::complain( std::string level )
 {
-    std::string message[4] = {"debug", "info", "warning", "error"};
+    std::string message[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
     void        (Harl::*func[5])( void ) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error, &Harl::other};
     int         i = 0;
 
@@ -62,13 +62,13 @@ void    Harl::complain( std::string level )
     switch (i)
     {
         case 0:
-            (this->*func[i])();
+            (this->*func[i++])();
         case 1:
-            (this->*func[i])();
+            (this->*func[i++])();
         case 2:
-            (this->*func[i])();
+            (this->*func[i++])();
         case 3:
-            (this->*func[i])();
+            (this->*func[i++])();
             break ;
         default:
             (this->*func[i])();
