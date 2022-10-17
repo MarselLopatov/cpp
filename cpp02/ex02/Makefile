@@ -1,4 +1,4 @@
-NAME		=	fixed
+NAME		=	fixed3
 
 SRC 		=	$(shell ls *cpp)
 OBJ			=	$(SRC:.cpp=.o)

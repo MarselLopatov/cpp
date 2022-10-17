@@ -1,4 +1,4 @@
-NAME		=	harlFilter
+NAME		=	fixed2
 
 SRC 		=	$(shell ls *cpp)
 OBJ			=	$(SRC:.cpp=.o)

@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 17:42:47 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/13 16:28:15 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/10/14 14:30:57 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,18 @@ Fixed::Fixed()
 {
     std::cout << "Default constructor called\n";
     this->value = 0;
+}
+
+Fixed::Fixed( const int value ) 
+{
+    std::cout << "Int constructor called\n";
+    this->value = value << bits;
+}
+
+Fixed::Fixed( const float value ) 
+{
+    std::cout << "Float constructor called\n";
+    this->value = roundf(value * (1 << bits));
 }
 
 Fixed::Fixed(const Fixed& copy)
@@ -47,4 +59,20 @@ void    Fixed::setRawBits( int const raw )
 {
     std::cout << "setRawBits member function called\n";
     this->value = raw;
+}
+
+float   Fixed::toFloat( void ) const
+{
+    return ((float)value / (1 << bits));
+}
+
+int		Fixed::toInt( void ) const
+{
+    return (this->value >> bits);
+}
+
+std::ostream&	operator<<( std::ostream& stream, const Fixed& copy )
+{
+    stream << copy.toFloat();
+    return (stream);
 }
