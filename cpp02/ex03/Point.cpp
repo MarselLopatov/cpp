@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 16:32:26 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/17 14:44:09 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/10/17 15:35:01 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,10 @@ Point::Point( float x, float y ): _x(Fixed(x)), _y(Fixed(y))
 Point::~Point()
 {}
 
-Point Point::operator=( const Point& copy )
+Point &Point::operator=( const Point& copy )
 {
-    Point point(copy.getX(), copy.getY());
-
-    return (point);
+    (void) copy;
+    return (*this);
 }
 
 float Point::getX() const

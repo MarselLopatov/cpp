@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.hpp                                          :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 16:32:28 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/17 15:35:03 by cdoria           ###   ########.fr       */
+/*   Created: 2022/10/17 14:53:55 by cdoria            #+#    #+#             */
+/*   Updated: 2022/10/17 15:43:42 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#pragma once
+#ifndef CLAPTRAT_HPP
+# define CLAPTRAP_HPP
 
-class Point
+#include <iostream>
+
+class ClapTrap
 {
 private:
-    Fixed const _x;
-    Fixed const _y;
+	std::string	_name;
+	int			_health;
+	int			_energy;
+	int			_damage;
 
 public:
-    Point(float x, float y);
-    Point();
-    ~Point();
+	ClapTrap( std::string name );
+	~ClapTrap();
 
-    Point   &operator=( const Point& copy );
-    float   getX() const;
-    float   getY() const;
+	void attack(const std::string& target);
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount);
 };
 
-std::ostream&	operator<<( std::ostream& stream, const Point& copy );
-bool            bsp( Point const a, Point const b, Point const c, Point const point);
+#endif
