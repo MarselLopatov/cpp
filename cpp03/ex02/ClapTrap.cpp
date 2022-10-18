@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:53:44 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/18 16:40:58 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/10/18 16:49:05 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap( std::string name ): _name(name), _health(10), _energy(10), _damage(0)
 {
-	std::cout << "ClapTrap constructor called!\n";
+	std::cout << "Hi, that's ClapTrap constructor!\n";
 }
 
 ClapTrap::ClapTrap(): _name("None"),  _health(10), _energy(10), _damage(0)
@@ -22,6 +22,11 @@ ClapTrap::ClapTrap(): _name("None"),  _health(10), _energy(10), _damage(0)
 	std::cout << "ClapTrap default constructor called!\n";
 }
 
+ClapTrap::ClapTrap( const ClapTrap& other )
+{
+	std::cout << "ClapTrap copy contructor called!\n";
+	*this = other;
+}
 
 void	ClapTrap::attack( const std::string& target )
 {
@@ -37,7 +42,7 @@ void	ClapTrap::attack( const std::string& target )
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "DIED\n";
+	std::cout << "ClapTrap " << _name << " died :c\n";
 }
 
 void	ClapTrap::beRepaired( unsigned int amount )
@@ -69,10 +74,4 @@ ClapTrap   &ClapTrap::operator=( const ClapTrap& copy )
 {
 	this->_name = copy._name;
 	return (*this);
-}
-
-ClapTrap::ClapTrap( const ClapTrap& copy )
-{
-	std::cout << "Copy contructor called.\n";
-	*this = copy;
 }

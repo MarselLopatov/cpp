@@ -1,4 +1,4 @@
-NAME		=	scavtrap
+NAME		=	fragtrap
 
 SRC 		=	$(shell ls *cpp)
 OBJ			=	$(SRC:.cpp=.o)

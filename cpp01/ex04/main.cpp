@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 20:13:27 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/11 11:39:37 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/10/18 20:36:39 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ bool ft_replace( std::string filename, std::string str1, std::string str2 )
     std::string     search;
     size_t          pos;
 
-    (void) str1;
-    (void) str2;
+    if (str1 == "\0" || str2 == "\0")
+        return (0);
     file.open(filename.c_str());
     if (!file.is_open())
         return (0);
