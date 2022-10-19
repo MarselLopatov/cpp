@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 17:13:40 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/18 18:02:55 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/10/19 13:39:43 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ public:
 	~DiamondTrap();
 
 	DiamondTrap	&operator=( const DiamondTrap& other );
+	void whoAmI();
 };
 
 #endif

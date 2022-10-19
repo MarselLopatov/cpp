@@ -6,30 +6,30 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 15:44:33 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/18 16:55:14 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/10/19 14:23:13 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main( void )
 {
-	ClapTrap a("Jack");
-	ScavTrap b("LOL");
-	FragTrap c("KEK");
+	DiamondTrap a("LOL");
+	DiamondTrap b("KEK");
+	DiamondTrap c;
 
-	a.attack("Bob");
-	a.takeDamage(6);
-	a.beRepaired(3);
+	c.whoAmI();
 
-	b.attack("Bob");
-	b.beRepaired(4);
-	b.takeDamage(10);
-	b.guardGate();
+	c = b;
 
+	a.attack("KEK");
+	b.beRepaired(10);
+	c.takeDamage(20);
+	a.guardGate();
+	b.highFivesGuys();
 	c.attack("LOL");
-	c.beRepaired(90);
-	c.takeDamage(400);
-	c.highFivesGuys();
+
+	a.whoAmI();
+	b.whoAmI();
+	c.whoAmI();
 }
