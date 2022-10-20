@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 14:42:44 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/19 17:03:52 by cdoria           ###   ########.fr       */
+/*   Created: 2022/10/19 17:04:09 by cdoria            #+#    #+#             */
+/*   Updated: 2022/10/19 17:10:36 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+#ifndef CAT_HPP
+# define CAT_HPP
+
 #include "Animal.hpp"
 
-Animal::Animal( std::string type ): _type(type)
-{}
-
-Animal::Animal(): _type("None")
-{}
-
-Animal::Animal( const Animal& other )
+class Cat: public Animal
 {
-    *this = other;
-}
+public:
+    Cat( const Cat& other );
+    Cat( std::string type );
+    Cat();
 
-Animal& Animal::operator=( const Animal& other)
-{
-    this->_type = other._type;
-    return(*this);
-}
+    Cat&    operator=( const Cat& other );
+};
+
+#endif
