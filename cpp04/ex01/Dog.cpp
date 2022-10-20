@@ -1,41 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 17:04:07 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/20 16:31:39 by cdoria           ###   ########.fr       */
+/*   Created: 2022/10/20 14:48:04 by cdoria            #+#    #+#             */
+/*   Updated: 2022/10/20 17:22:58 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Dog.hpp"
 
-Cat::Cat(): Animal ("Cat")
+Dog::Dog(): Animal("Dog")
 {
-	std::cout << "Cat constructor called\n";
+	_brain = new Brain();
+	std::cout << "Dog constructor called\n";
 }
 
-Cat&	Cat::operator=( const Cat& other )
+Dog&	Dog::operator=( const Dog& other )
 {
-	std::cout << "Cat operator= called\n";
+	if (_brain)
+		delete _brain;
+	_brain = new Brain(*other._brain);
+	std::cout << "Dog operator= called\n";
 	this->_type = other._type;
 	return (*this);
 }
 
-Cat::Cat( const Cat& other)
+Dog::Dog( const Dog& other )
 {
-	std::cout << "Cat copy consturcor called\n";
+	std::cout << "Dog copy constuctor called\n";
 	*this = other;
 }
 
-Cat::~Cat()
+Dog::~Dog()
 {
-	std::cout << "Cat destructor called\n";
+	delete _brain;
+	std::cout << "Dog destuctor called\n";
 }
 
-void    Cat::makeSound() const
+void    Dog::makeSound() const
 {
-    std::cout << "Cat sound\n";
+    std::cout << "Dog sound\n";
 }

@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 17:04:07 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/20 16:31:39 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/10/20 17:20:06 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 
 Cat::Cat(): Animal ("Cat")
 {
+	_brain = new Brain();
 	std::cout << "Cat constructor called\n";
 }
 
 Cat&	Cat::operator=( const Cat& other )
 {
-	std::cout << "Cat operator= called\n";
+	if (_brain)
+		delete _brain;
+	_brain = new Brain(*other._brain);
 	this->_type = other._type;
+	std::cout << "Cat operator= called\n";
 	return (*this);
 }
 
@@ -32,6 +36,7 @@ Cat::Cat( const Cat& other)
 
 Cat::~Cat()
 {
+	delete _brain;
 	std::cout << "Cat destructor called\n";
 }
 

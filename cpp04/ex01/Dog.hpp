@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 17:04:09 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/20 15:26:09 by cdoria           ###   ########.fr       */
+/*   Created: 2022/10/20 14:47:24 by cdoria            #+#    #+#             */
+/*   Updated: 2022/10/20 17:14:03 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
-class Cat: public Animal
+class Dog: public Animal
 {
-public:
-    Cat( const Cat& other );
-    Cat();
-    ~Cat();
+private:
+    Brain *_brain;
 
-    Cat&        operator=( const Cat& other );
-    void        makeSound() const;
+public:
+    Dog( const Dog& other );
+    Dog();
+	~Dog();
+
+    Dog&    	operator=( const Dog& other );
+	void		makeSound() const;
 };
 
 #endif

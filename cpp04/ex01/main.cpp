@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 17:04:09 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/20 15:26:09 by cdoria           ###   ########.fr       */
+/*   Created: 2022/10/20 14:57:42 by cdoria            #+#    #+#             */
+/*   Updated: 2022/10/20 17:25:28 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#ifndef CAT_HPP
-# define CAT_HPP
+#include "Dog.hpp"
+#include "Cat.hpp"
 
-#include "Animal.hpp"
-
-class Cat: public Animal
+int main()
 {
-public:
-    Cat( const Cat& other );
-    Cat();
-    ~Cat();
+	const Animal *meta[10];
 
-    Cat&        operator=( const Cat& other );
-    void        makeSound() const;
-};
-
-#endif
+	for (int i = 0; i < 10; i++)
+	{
+		if (i < 5)
+			meta[i] = new Dog();
+		else
+			meta[i] = new Cat();
+		meta[i]->makeSound();
+	}
+	return (0);
+}

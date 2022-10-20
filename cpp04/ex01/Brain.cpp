@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 17:04:09 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/20 15:26:09 by cdoria           ###   ########.fr       */
+/*   Created: 2022/10/20 17:00:02 by cdoria            #+#    #+#             */
+/*   Updated: 2022/10/20 17:12:57 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#ifndef CAT_HPP
-# define CAT_HPP
+#include "Brain.hpp"
 
-#include "Animal.hpp"
-
-class Cat: public Animal
+Brain::Brain()
 {
-public:
-    Cat( const Cat& other );
-    Cat();
-    ~Cat();
+	std::cout << "Brain constructor\n";
+}
 
-    Cat&        operator=( const Cat& other );
-    void        makeSound() const;
-};
+Brain&	Brain::operator=( const Brain& other )
+{
+	for (int i = 0; i < 100; i++)
+		this->_ideas[i] = other._ideas[i];
+	return (*this);
+}
 
-#endif
+Brain::Brain( const Brain& other )
+{
+	*this = other;
+}
+
+Brain::~Brain()
+{
+	std::cout << "Brain destructor\n";
+}

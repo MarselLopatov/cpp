@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 17:04:07 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/20 16:31:39 by cdoria           ###   ########.fr       */
+/*   Created: 2022/10/20 16:37:28 by cdoria            #+#    #+#             */
+/*   Updated: 2022/10/20 16:40:00 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat(): Animal ("Cat")
+WrongCat::WrongCat(): WrongAnimal ("WrongCat")
 {
-	std::cout << "Cat constructor called\n";
+	std::cout << "WrongCat constructor called\n";
 }
 
-Cat&	Cat::operator=( const Cat& other )
+WrongCat&	WrongCat::operator=( const WrongCat& other )
 {
-	std::cout << "Cat operator= called\n";
+	std::cout << "WrongCat operator= called\n";
 	this->_type = other._type;
 	return (*this);
 }
 
-Cat::Cat( const Cat& other)
+WrongCat::WrongCat( const WrongCat& other)
 {
-	std::cout << "Cat copy consturcor called\n";
+	std::cout << "WrongCat copy consturcor called\n";
 	*this = other;
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-	std::cout << "Cat destructor called\n";
+	std::cout << "WrongCat destructor called\n";
 }
 
-void    Cat::makeSound() const
+void    WrongCat::makeSound() const
 {
-    std::cout << "Cat sound\n";
+    std::cout << "WrongCat sound\n";
 }

@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 17:04:09 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/20 15:26:09 by cdoria           ###   ########.fr       */
+/*   Created: 2022/10/20 17:00:07 by cdoria            #+#    #+#             */
+/*   Updated: 2022/10/20 17:12:01 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-#include "Animal.hpp"
+#include <iostream>
 
-class Cat: public Animal
+class Brain
 {
-public:
-    Cat( const Cat& other );
-    Cat();
-    ~Cat();
+private:
+	std::string _ideas[100];
 
-    Cat&        operator=( const Cat& other );
-    void        makeSound() const;
+public:
+	Brain();
+	Brain( const Brain& other );
+	~Brain();
+
+	Brain& operator=( const Brain& other );
 };
 
 #endif
