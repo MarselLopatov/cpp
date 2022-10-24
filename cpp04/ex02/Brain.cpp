@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 17:04:07 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/20 13:37:22 by cdoria           ###   ########.fr       */
+/*   Created: 2022/10/20 17:00:02 by cdoria            #+#    #+#             */
+/*   Updated: 2022/10/20 17:12:57 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Brain.hpp"
 
-Cat::Cat(): Animal ("Cat")
+Brain::Brain()
 {
-	std::cout << "Cat constructor called\n";
+	std::cout << "Brain constructor\n";
 }
 
-Cat&	Cat::operator=( const Cat& other )
+Brain&	Brain::operator=( const Brain& other )
 {
-	std::cout << "Cat operator= called\n";
-	this->_type = other._type;
+	for (int i = 0; i < 100; i++)
+		this->_ideas[i] = other._ideas[i];
 	return (*this);
 }
 
-Cat::Cat( const Cat& other): Animal("Cat")
+Brain::Brain( const Brain& other )
 {
-	std::cout << "Cat copy consturcor called\n";
 	*this = other;
 }
 
-Cat::~Cat()
+Brain::~Brain()
 {
-	std::cout << "Cat destructor called\n";
-}
-
-void    Cat::makeSound() const
-{
-    std::cout << "Cat sound\n";
+	std::cout << "Brain destructor\n";
 }

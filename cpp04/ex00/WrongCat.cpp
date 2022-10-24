@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:37:28 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/20 16:40:00 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/10/20 13:38:18 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ WrongCat&	WrongCat::operator=( const WrongCat& other )
 	return (*this);
 }
 
-WrongCat::WrongCat( const WrongCat& other)
+WrongCat::WrongCat( const WrongCat& other): WrongAnimal("WrongCat")
 {
 	std::cout << "WrongCat copy consturcor called\n";
 	*this = other;

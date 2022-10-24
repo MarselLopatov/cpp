@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:48:04 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/20 16:32:45 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/10/20 13:37:33 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Dog&	Dog::operator=( const Dog& other )
 	return (*this);
 }
 
-Dog::Dog( const Dog& other )
+Dog::Dog( const Dog& other ): Animal("Dog")
 {
 	std::cout << "Dog copy constuctor called\n";
 	*this = other;
