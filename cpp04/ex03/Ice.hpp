@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 14:57:42 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/24 15:24:19 by cdoria           ###   ########.fr       */
+/*   Created: 2022/10/24 15:58:47 by cdoria            #+#    #+#             */
+/*   Updated: 2022/10/24 19:16:26 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#pragma once
+#ifndef ICE_HPP
+# define ICE_HPP
 
-int main()
+#include "AMateria.hpp"
+
+class Ice : public AMateria
 {
-	// const Animal* meta = new Animal(); error
-	const Animal* i = new Cat();
-	const Animal* j = new Dog();
+public:
+	Ice();
+	Ice( const Ice& other );
+	~Ice();
 
-	std::cout << i->getType() << " " << std::endl;
-	std::cout << j->getType() << " " << std::endl;
-	j->makeSound();
-	i->makeSound();
+	Ice			&operator=( const Ice& other );
+	void 		use( ICharacter& target );
+	AMateria*	clone() const;
+};
 
-	delete i;
-	delete j;
-
-	return (0);
-}
+#endif

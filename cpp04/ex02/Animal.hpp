@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 14:35:59 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/20 13:33:54 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/10/24 15:22:07 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 	virtual ~Animal();
 
 	Animal&			operator=( const Animal& other );
-	virtual void	makeSound() const;
+	virtual void	makeSound() const = 0;
 	std::string		getType() const;
 };
 

@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 14:57:42 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/24 15:24:19 by cdoria           ###   ########.fr       */
+/*   Created: 2022/10/24 16:01:42 by cdoria            #+#    #+#             */
+/*   Updated: 2022/10/24 19:04:57 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#pragma once
+#ifndef ICHARACTER_HPP
+# define ICHARACTER_HPP
 
-int main()
+#include "AMateria.hpp"
+
+class AMateria;
+
+class ICharacter
 {
-	// const Animal* meta = new Animal(); error
-	const Animal* i = new Cat();
-	const Animal* j = new Dog();
+public:
+	virtual ~ICharacter() {}
+	virtual std::string const & getName() const = 0;
+	virtual void equip( AMateria* m ) = 0;
+	virtual void unequip( int idx ) = 0;
+	virtual void use( int idx, ICharacter& target ) = 0;
+};
 
-	std::cout << i->getType() << " " << std::endl;
-	std::cout << j->getType() << " " << std::endl;
-	j->makeSound();
-	i->makeSound();
-
-	delete i;
-	delete j;
-
-	return (0);
-}
+#endif

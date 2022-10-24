@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 14:47:24 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/24 15:21:56 by cdoria           ###   ########.fr       */
+/*   Created: 2022/10/24 16:56:23 by cdoria            #+#    #+#             */
+/*   Updated: 2022/10/24 19:45:40 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "ICharacter.hpp"
 
-class Dog: public Animal
+class Character : public ICharacter
 {
 private:
-    Brain *_brain;
+	std::string _name;
+	AMateria	 *inventory[4];
 
 public:
-    Dog( const Dog& other );
-    Dog();
-	~Dog();
+	Character();
+	Character( std::string name );
+	Character( const Character& other );
+	~Character();
 
-    Dog&    	operator=( const Dog& other );
-	void		makeSound() const;
+	Character &operator=( const Character& other );
+	std::string const & getName() const;
+	void equip( AMateria* m );
+	void unequip( int idx );
+	void use( int idx, ICharacter& target );
 };
 
 #endif

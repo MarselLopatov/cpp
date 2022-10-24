@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 14:57:42 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/24 15:24:19 by cdoria           ###   ########.fr       */
+/*   Created: 2022/10/24 16:03:11 by cdoria            #+#    #+#             */
+/*   Updated: 2022/10/24 18:34:31 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#pragma once
+#ifndef IMATERIASOURCE_HPP
+# define IMATERIASOURCE_HPP
 
-int main()
+#include "AMateria.hpp"
+
+class IMateriaSource
 {
-	// const Animal* meta = new Animal(); error
-	const Animal* i = new Cat();
-	const Animal* j = new Dog();
+public:
+	virtual ~IMateriaSource() {}
+	virtual void learnMateria( AMateria* ) = 0;
+	virtual AMateria* createMateria( std::string const & type ) = 0;
+};
 
-	std::cout << i->getType() << " " << std::endl;
-	std::cout << j->getType() << " " << std::endl;
-	j->makeSound();
-	i->makeSound();
-
-	delete i;
-	delete j;
-
-	return (0);
-}
+#endif

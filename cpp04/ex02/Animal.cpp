@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 14:42:44 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/20 16:50:22 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/10/24 15:22:05 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ Animal& Animal::operator=( const Animal& other)
     return(*this);
 }
 
-void    Animal::makeSound() const
-{
-    std::cout << "Animal sound\n";
-}
+// void    Animal::makeSound() const
+// {
+//     std::cout << "Animal sound\n";
+// }
 
 std::string	Animal::getType() const
 {

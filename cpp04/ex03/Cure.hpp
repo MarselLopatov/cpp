@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 14:57:42 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/24 15:24:19 by cdoria           ###   ########.fr       */
+/*   Created: 2022/10/24 15:59:33 by cdoria            #+#    #+#             */
+/*   Updated: 2022/10/24 19:16:34 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#pragma once
+#ifndef CURE_HPP
+# define CURE_HPP
 
-int main()
+#include "AMateria.hpp"
+
+class Cure : public AMateria
 {
-	// const Animal* meta = new Animal(); error
-	const Animal* i = new Cat();
-	const Animal* j = new Dog();
+public:
+	Cure();
+	Cure( const Cure& other );
+	~Cure();
 
-	std::cout << i->getType() << " " << std::endl;
-	std::cout << j->getType() << " " << std::endl;
-	j->makeSound();
-	i->makeSound();
+	Cure		&operator=( const Cure& other );
+	void		use( ICharacter& target );
+	AMateria*	clone() const;
+};
 
-	delete i;
-	delete j;
 
-	return (0);
-}
+
+#endif

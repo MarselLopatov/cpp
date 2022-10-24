@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 14:57:42 by cdoria            #+#    #+#             */
-/*   Updated: 2022/10/24 15:24:19 by cdoria           ###   ########.fr       */
+/*   Created: 2022/10/24 15:50:29 by cdoria            #+#    #+#             */
+/*   Updated: 2022/10/24 19:41:19 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#pragma once
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
-int main()
+#include <iostream>
+#include "ICharacter.hpp"
+
+class ICharacter;
+
+class AMateria
 {
-	// const Animal* meta = new Animal(); error
-	const Animal* i = new Cat();
-	const Animal* j = new Dog();
+protected:
+	std::string _type;
 
-	std::cout << i->getType() << " " << std::endl;
-	std::cout << j->getType() << " " << std::endl;
-	j->makeSound();
-	i->makeSound();
+public:
+	AMateria();
+	AMateria( std::string const & type );
+	virtual ~AMateria();
 
-	delete i;
-	delete j;
+	std::string const & getType() const;
+	virtual AMateria* clone() const = 0;
+	virtual void use( ICharacter& target ) = 0;
+};
 
-	return (0);
-}
+#endif
