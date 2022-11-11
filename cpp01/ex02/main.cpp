@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 14:45:37 by cdoria            #+#    #+#             */
-/*   Updated: 2022/09/28 17:02:35 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/11/08 10:32:43 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(void)
 {
-	std::string message = "HI THIS IS BRAIN";
+	std::string	message = "HI THIS IS BRAIN";
 	std::string	*stringPTR = &message;
 	std::string	&stringREF = message;
 

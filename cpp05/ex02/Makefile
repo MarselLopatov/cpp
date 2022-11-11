@@ -1,4 +1,4 @@
-NAME		=	form
+NAME		=	execute_forms
 
 SRC 		=	$(shell ls *cpp)
 OBJ			=	$(SRC:.cpp=.o)

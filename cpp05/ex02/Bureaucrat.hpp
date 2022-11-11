@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:52:35 by cdoria            #+#    #+#             */
-/*   Updated: 2022/11/08 11:00:51 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/11/10 19:25:07 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,16 @@
 
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
 private:
 	const std::string	_name;
 	int					_grade;
+
 public:
 	class TooLowGradeExeption : public std::exception
 	{
@@ -43,6 +47,8 @@ public:
 	int					getGrade() const;
 	void				increment();
 	void				decrement();
+	void				signForm( Form &form );
+	void				executeForm( Form const & form );
 };
 
 std::ostream&	operator<<( std::ostream& out, const Bureaucrat& other );

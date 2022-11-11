@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:52:35 by cdoria            #+#    #+#             */
-/*   Updated: 2022/11/08 11:00:51 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/11/10 00:35:45 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -43,6 +46,7 @@ public:
 	int					getGrade() const;
 	void				increment();
 	void				decrement();
+	void				signForm( Form &form );
 };
 
 std::ostream&	operator<<( std::ostream& out, const Bureaucrat& other );

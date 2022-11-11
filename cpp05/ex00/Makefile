@@ -7,7 +7,7 @@ OBJS 		= 	$(addprefix $(OBJS_DIR), $(OBJ))
 
 
 
-CC			=	c++ -std=c++98
+CC			=	c++ #-std=c++98
 CFLAGS		=	-Wall -Wextra -Werror
 
 all 				: $(NAME)
